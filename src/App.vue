@@ -1,13 +1,43 @@
 <template>
   <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </nav>
-    <router-view />
+    <RadioGroup v-model="value" :disabled="disabled">
+      <RadioItem value="1" label="Значение 1" />
+      <RadioItem value="2" label="Значение 2" />
+      <RadioItem value="3" label="Значение 3" />
+    </RadioGroup>
+    <validate-items>
+      <div>
+        <validate-items> </validate-items>
+      </div>
+      <div>
+        <validate-items>
+          <validate-items> </validate-items>
+        </validate-items>
+      </div>
+      <div>
+        <validate-items> </validate-items>
+      </div>
+    </validate-items>
   </div>
 </template>
-
+<script>
+import RadioGroup from "@/components/RadioGroup.vue";
+import RadioItem from "@/components/RadioItem.vue";
+import ValidateItems from "@/components/ValidateItems.vue";
+export default {
+  components: {
+    RadioGroup,
+    RadioItem,
+    ValidateItems,
+  },
+  data() {
+    return {
+      value: "",
+      disabled: false,
+    };
+  },
+};
+</script>
 <style lang="scss">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
