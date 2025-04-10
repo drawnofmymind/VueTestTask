@@ -22,6 +22,8 @@ export default {
           const childComponent = vnode.componentInstance;
           this.value += 1;
           childComponent.validate();
+
+          console.log('test')
         }
       });
     },
